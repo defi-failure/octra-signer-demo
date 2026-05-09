@@ -792,7 +792,7 @@
     },
     connect: async function() {
       var s = await fetchStatus();
-      if (s.reason === 'unreachable') { log('webcli unreachable', 'err'); toast('Please install webcli first · <a href="https://github.com/octra-labs/webcli" target="_blank" rel="noopener" class="underline text-stone-900 hover:text-rose-600">github.com/octra-labs/webcli</a>', 'err'); return; }
+      if (s.reason === 'unreachable') { log('webcli unreachable', 'err'); toast('webcli not running locally · <a href="https://github.com/defi-failure/octra-signer-demo#try-it" target="_blank" rel="noopener" class="underline text-stone-900 hover:text-rose-600">setup instructions</a>', 'err'); return; }
       if (s.reason === 'file_origin_blocked') { toast('Serve over http:// to use the signer', 'err'); return; }
       run('connect', {}, '');
     },
